@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AnisetteKit
 import SideSign
 
 enum AnisetteProvider {

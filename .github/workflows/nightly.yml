@@ -22,7 +22,6 @@ jobs:
   build:
     runs-on: xcode-27
     env:
-      DEPLOY_KEY: ${{ secrets.CROSS_REPO_PUSH_KEY }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       RELEASE_NAME: Nightly
       CHANNEL: nightly
@@ -231,13 +230,6 @@ jobs:
           name: SideStore-${{ env.MARKETING_VERSION }}-dSYMs.zip
           path: SideStore.dSYMs.zip
 
-      - uses: actions/checkout@v4
-        if: steps.build_gate.outputs.should_skip != 'true' && env.DEPLOY_KEY != ''
-        with:
-          repository: "SideStore/apps-v2.json"
-          ref: "main"
-          token: ${{ secrets.CROSS_REPO_PUSH_KEY }}
-          path: "SideStore/apps-v2.json"
 
       - name: Generate Metadata
         if: steps.build_gate.outputs.should_skip != 'true'
@@ -256,16 +248,6 @@ jobs:
             "$IPA_NAME" \
             "$LAST_SUCCESSFUL_COMMIT"
 
-      - name: Deploy
-        if: steps.build_gate.outputs.should_skip != 'true' && env.DEPLOY_KEY != ''
-        run: |
-          SOURCE_JSON="_includes/source.json"
-
-          python3 scripts/ci/workflow.py deploy \
-            SideStore/apps-v2.json \
-            "$SOURCE_JSON" \
-            "$CHANNEL" \
-            "$MARKETING_VERSION"
       
 
       # --------------------------------------------------

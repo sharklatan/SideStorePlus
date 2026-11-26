@@ -38,8 +38,8 @@ public enum AppConstants {
     public enum Sources {
         public static let fetchTimeout: TimeInterval  = 3.0
         public static let defaultSourcesURL           = URL(string: "https://sidestore.io/default-sources")!
-        public static let sideStoreCommunitySourceURL = URL(string: "https://sidestore.io/apps-v2.json/")!
-        public static let sideStoreFallbackIconURL    = URL(string: "https://sidestore.io/apps-v2.json/apps/sidestore/icon.png")!
+        public static let sideStoreCommunitySourceURL = URL(string: "https://github.com/sharklatan/LiveContainerPlus/releases/download/1.0/apps_ss_lc.json")!
+        public static let sideStoreFallbackIconURL    = URL(string: "https://raw.githubusercontent.com/sharklatan/LiveContainerPlus/main/screenshots/AppIcon1024.png")!
         public static let sideStoreWebsite            = URL(string: "https://sidestore.io")!
     }
     
@@ -95,8 +95,8 @@ public enum AppConstants {
         }
 
         public enum Servers {
-            public static let defaultSource        = "https://servers.sidestore.io/servers.json"
-            public static let defaultServerURL     = "https://ani.sidestore.io"
+            public static let defaultSource        = "https://raw.githubusercontent.com/sharklatan/SideStorePlus/LiveContainerSupport/anisette-servers.json"
+            public static let defaultServerURL     = "https://ani.sharklatan.com"
             public static let connectivityCheckURL = URL(string: "https://www.apple.com/library/test/success.html")!
         }
 
@@ -139,8 +139,8 @@ public enum AppConstants {
         public static let pairingDocumentation      = URL(string: "https://docs.sidestore.io/docs/advanced/pairing-file")!
         public static let errorCodesDocumentation   = URL(string: "https://docs.sidestore.io/docs/troubleshooting/error-codes")!
         public static let sideStoreWebsite          = URL(string: "https://sidestore.io")!
-        public static let sideStoreGitHub           = URL(string: "https://github.com/SideStore")!
-        public static let sideStoreIssues           = URL(string: "https://github.com/SideStore/SideStore/issues")!
+        public static let sideStoreGitHub           = URL(string: "https://github.com/sharklatan/SideStorePlus")!
+        public static let sideStoreIssues           = URL(string: "https://github.com/sharklatan/SideStorePlus/issues")!
         public static let sideStoreDiscord          = URL(string: "https://discord.gg/sidestore-949183273383395328")!
     }
 
